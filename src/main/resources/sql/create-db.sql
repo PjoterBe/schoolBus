@@ -15,8 +15,6 @@ follower_name VARCHAR(100),
 follower_surname VARCHAR(100),
 email VARCHAR(100),
 start_following TIMESTAMP,
-stop_following TIMESTAMP,
-is_checked BIT
 );
 drop table post if exists;
 create table post (
@@ -25,5 +23,5 @@ creator_name VARCHAR(100),
 creator_surname VARCHAR(100),
 creator_email VARCHAR(100),
 time_of_cration TIMESTAMP,
-does_exist BIT
+post_content VARCHAR(200),
 );
