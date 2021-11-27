@@ -1,0 +1,7 @@
+<bean id="dataSource"
+class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<property name="driverClassName" value="com.HSQLDB.jdbc.Driver" />
+<property name="url" value="https://bitbucket.org/aimier/project/src/master/src/main/resources/sql/" />
+<property name="username" value="JACK" />
+<property name="password" value="catsanddogs123" />
+</bean>
