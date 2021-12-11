@@ -6,60 +6,74 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name="user")
 public class User {
 
+
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private int id;
-    @Column (name="first_name", nullable = false)
-    private String firstName;
-    @Column (name="email", nullable = false)
+    private int user_Id;
+    @Column (name="user_name", nullable = false)
+    private String userName;
+    @Column (name="user_surname", nullable = false)
+    private String userSurname;
+    @Column (name="user_email", nullable = false)
     private String email;
-    @Column (name="username", nullable = false)
-    private String username;
-    @Column (name="password", nullable = false)
-    private String password;
+    @Column (name="user_paassword", nullable = false)
+    private String paassword;
+    @Column (name="join_Date", nullable = false)
+    private Timestamp joinDate;
 
-    public User(int id, String firstName, String email, String username, String password) {
-        this.id = id;
-        this.firstName = firstName;
+    public User(int userId, String userName,  String userSurname, String email,  String paassword, Timestamp joinDate) {
+        this.user_Id = userId;
+        this.userSurname = userSurname;
         this.email = email;
-        this.username = username;
-        this.password = password;
+        this.userName = userName;
+        this.paassword = paassword;
+        this.joinDate = joinDate;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+
+    public String getUserName() {
+        return userName;
     }
 
-    public String getFirstName() {
-        return this.firstName;
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserSurname() {
+        return userSurname;
+    }
+
+    public void setUserSurname(String userSurname) {
+        this.userSurname = userSurname;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getEmail() {
-        return this.email;
+    public String getPaassword() {
+        return paassword;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setPaassword(String paassword) {
+        this.paassword = paassword;
     }
 
-    public String getUsername() {
-        return this.username;
+    public Timestamp getJoinDate() {
+        return joinDate;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getPassword() {
-        return this.password;
+    public void setJoinDate(Timestamp joinDate) {
+        this.joinDate = joinDate;
     }
 }

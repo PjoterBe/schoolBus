@@ -14,47 +14,72 @@ import javax.persistence.Table;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private int postId;
+    @Column(name="creator_name", nullable = false)
+    private String creatorName;
+    @Column(name="creator_surname", nullable = false)
+    private String creatorSurname;
+    @Column(name="creator_email", nullable = false)
+    private String creatorEmail;
+    @Column(name="time_of_creation", nullable = false)
+    private Timestamp timeOfCreation;
+    @Column(name="post_content", nullable = false)
+    private String postContent;
 
-    @Column(name="Post_time", nullable = false)
-    private Timestamp postTime;
-
-    @Column(name="username", nullable = false)
-    private String username;
-
-    @Column(name="content", nullable = false)
-    private String content;
-
-    public Post(int id, Timestamp postTime, String username, String content) {
-        this.id = id;
-        this.postTime = postTime;
-        this.username = username;
-        this.content = content;
+    public Post(int postId, String creatorName, String creatorSurname, String creatorEmail,Timestamp timeOfCreation ,String postContent) {
+        this.postId = postId;
+        this.creatorName = creatorName;
+        this.creatorSurname = creatorSurname;
+        this.creatorEmail = creatorEmail;
+        this.timeOfCreation = timeOfCreation;
+        this.postContent = postContent;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getPostId() {
+        return postId;
     }
 
-    public int getId() {
-        return this.id;
+    public void setPostId(int postId) {
+        this.postId = postId;
     }
 
-
-    public Timestamp getPostTime() {
-        return this.postTime;
+    public String getCreatorName() {
+        return creatorName;
     }
 
-
-    public String getUsername() {
-        return this.username;
+    public void setCreatorName(String creatorName) {
+        this.creatorName = creatorName;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public String getCreatorSurname() {
+        return creatorSurname;
     }
 
-    public String getContent() {
-        return this.content;
+    public void setCreatorSurname(String creatorSurname) {
+        this.creatorSurname = creatorSurname;
+    }
+
+    public String getCreatorEmail() {
+        return creatorEmail;
+    }
+
+    public void setCreatorEmail(String creatorEmail) {
+        this.creatorEmail = creatorEmail;
+    }
+
+    public Timestamp getTimeOfCreation() {
+        return timeOfCreation;
+    }
+
+    public void setTimeOfCreation(Timestamp timeOfCreation) {
+        this.timeOfCreation = timeOfCreation;
+    }
+
+    public String getPostContent() {
+        return postContent;
+    }
+
+    public void setPostContent(String postContent) {
+        this.postContent = postContent;
     }
 }

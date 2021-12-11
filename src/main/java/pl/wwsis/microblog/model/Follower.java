@@ -1,46 +1,87 @@
 package pl.wwsis.microblog.model;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name="Follower")
 public class Follower {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-
-    @Column(name="follower", nullable = true)
-    private String follower;
-    @Column(name="following", nullable = true)
+    private int follower_id;
+    private String follower_name;
+    private String followerSurname;
+    @Column(name="follower_name", nullable = true)
+    private String followerName;
+    @Column(name="follower_Surname", nullable = true)
     private String following;
-    @Column(name="primary_key", nullable = true)
-    private int primaryKey;
+    @Column(name="follower_email", nullable = true)
+    private String followerEmail;
+    @Column(name="start_following", nullable = true)
+    private Timestamp startFollowing;
 
 
-    public Follower(int id, String follower, String following, int primaryKey ) {
-        this.id = id;
-        this.follower = follower;
-        this.following = following;
-        this.primaryKey = primaryKey;
+    public Follower(int follower_id, String follower_name, String followerSurname,String followerEmail, Timestamp startFollowing ) {
+        this.follower_id = follower_id;
+        this.follower_name = follower_name;
+        this.followerSurname = followerSurname;
+        this.followerEmail = followerEmail;
+        this.startFollowing = startFollowing;
+    }
 
+    public int getFollower_id() {
+        return follower_id;
     }
-    public void setId(int id) {
-        this.id = id;
+
+    public void setFollower_id(int follower_id) {
+        this.follower_id = follower_id;
     }
-    public int getId() {
-        return this.id;
+
+    public String getFollower_name() {
+        return follower_name;
     }
-    public void setFollower(String follower) {
-        this.follower = follower;
+
+    public void setFollower_name(String follower_name) {
+        this.follower_name = follower_name;
     }
-    public String getFollower() {
-        return this.follower;
+
+    public String getFollowerSurname() {
+        return followerSurname;
     }
+
+    public void setFollowerSurname(String followerSurname) {
+        this.followerSurname = followerSurname;
+    }
+
+    public String getFollowerName() {
+        return followerName;
+    }
+
+    public void setFollowerName(String followerName) {
+        this.followerName = followerName;
+    }
+
+    public String getFollowing() {
+        return following;
+    }
+
     public void setFollowing(String following) {
         this.following = following;
     }
 
-    public String getFollowing() {
-        return this.following;
+    public String getFollowerEmail() {
+        return followerEmail;
+    }
+
+    public void setFollowerEmail(String followerEmail) {
+        this.followerEmail = followerEmail;
+    }
+
+    public Timestamp getStartFollowing() {
+        return startFollowing;
+    }
+
+    public void setStartFollowing(Timestamp startFollowing) {
+        this.startFollowing = startFollowing;
     }
 }
